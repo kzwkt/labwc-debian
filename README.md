@@ -33,6 +33,8 @@ https://github.com/labwc/labwc/tags
 
 https://github.com/labwc/labwc/tree/0.5.3
 
+https://tracker.debian.org/media/packages/l/labwc/control-0.8.3-1
+
 ```
 
 
