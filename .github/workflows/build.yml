@@ -12,7 +12,8 @@ jobs:
         run: |
             bash build.sh
             version=$(cat version)
-            echo "FILES=$(realpath zathura-pdf-mupdf-$version/build/libpdf-mupdf.so)" >> $GITHUB_ENV
+            echo "VERSION=$version" >> $GITHUB_ENV
+            echo "FILES=$(realpath labwc-$version/build/labwc)" >> $GITHUB_ENV
 
       - name: Set dynamic tag version
         run: |
@@ -20,9 +21,9 @@ jobs:
 
       - uses: softprops/action-gh-release@v2
         with:
-          tag_name: "zathura-pdf-mupdf"
-          name: "Release zathura-pdf-mupdf"
-          body: "This release includes the possible build for zathura-pdf-mupdf for debian stable."
+          tag_name: "labwc-${{ env.VERSION }}"
+          name: "labwc"
+          body: "This release includes the possible build for labwc for debian stable."
           files: |
             ${{ env.FILES }}
         env:
