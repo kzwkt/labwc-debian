@@ -8,6 +8,6 @@ echo $version > version
 wget https://github.com/labwc/labwc/archive/refs/tags/$version.tar.gz
 tar -xzf $version.tar.gz
 cd labwc-$version/
-meson build/
+meson -Dxwayland=disabled build/
 ninja -C build/
 strip build/labwc
